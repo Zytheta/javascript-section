@@ -1,2 +1,3 @@
 # javascript-section
-Repo for holding files pertaining to javascrip lessons
+
+Repo for holding files pertaining to javascript lessons.
