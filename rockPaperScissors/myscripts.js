@@ -15,21 +15,6 @@ function getRandom() {
     return Math.floor(Math.random() * 3); // Returns a number from 0-2
 }
 
-function showComputerMove() {
-    console.log("Show computer move button was clicked.");
-    getComputerMove();
-    console.log(computerMove)
-    if (computerMove === 0) {
-        return alert("The computer played 'rock'!");
-    } else if (computerMove === 1) {
-        return alert("The computer played 'paper'!");
-    } else if (computerMove === 2) {
-        return alert("The computer played 'scissors'!");
-    } else {
-        return alert("The computer is confused!");
-    }
-}
-
 function getComputerMove() {
     switch (getRandom()) {
         case 0:
@@ -54,7 +39,22 @@ function getComputerMove() {
     return computerMove
 }
 
-//userInput.addEventListener("click", function(e) {
+function showComputerMove() {
+    console.log("Show computer move button was clicked.");
+    getComputerMove();
+    console.log(computerMove)
+    if (computerMove === 0) {
+        return alert("The computer played 'rock'!");
+    } else if (computerMove === 1) {
+        return alert("The computer played 'paper'!");
+    } else if (computerMove === 2) {
+        return alert("The computer played 'scissors'!");
+    } else {
+        return alert("The computer is confused!");
+    }
+}
+
+
 function playGame() {
     console.log("Button was clicked");
     let move = prompt("What move will you play?");
