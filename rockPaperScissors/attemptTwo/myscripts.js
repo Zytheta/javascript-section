@@ -18,7 +18,7 @@ function getRandom() {
     return Math.floor(Math.random() * 3); // Returns a number from 0-2
 }
 
-function getComputerMove() {
+function getComputerMove() { // Returns the computer move as listed below
     switch (getRandom()) {
         case 0:
             console.log("The computer played 'rock!'");
@@ -37,7 +37,7 @@ function getComputerMove() {
     }
 }
 
-function showComputerMove() {
+function showComputerMove() { // You can test the computer move with this
     console.log("Show computer move button was clicked.");
     getComputerMove();
     if (computerMove === 0) {
@@ -51,10 +51,10 @@ function showComputerMove() {
     }
 }
 
-function getPlayerMove() {
+function getPlayerMove() { 
     let move = prompt("What move will you play?");
     console.log(move);
-    let moveLowerCase = move.toLowerCase();
+    let moveLowerCase = move.toLowerCase(); // Move is moved to lower case 
     console.log(moveLowerCase);
     switch (moveLowerCase) {
         case 'rock':
@@ -73,7 +73,7 @@ function getPlayerMove() {
     }
 }
 
-function getWinner() {
+function getWinner() { // Returns a winner statement, increases the round number, keeps track of who is winning and losing
     console.log((playerMove), (computerMove));
     if (playerMove === 0 && computerMove === 0) {
         console.log("It's a tie.");
@@ -123,7 +123,7 @@ function getWinner() {
     }
 }
 
-function game() {
+function game() { // Game of 5 rounds
     console.log("This is round " + roundCount + " .");
     console.log("You have " + playerWins + " win(s) and the computer has " + computerWins + " win(s).");
     getPlayerMove()
@@ -152,7 +152,7 @@ function game() {
     console.log("Finished! You have " + playerWins + " win(s) and the computer has " + computerWins + " win(s).");
 }
 
-/* function playGame() {
+/* function playGame() { // Old do not use
     console.log("Button was clicked");
     let move = prompt("What move will you play?");
     console.log(move);
