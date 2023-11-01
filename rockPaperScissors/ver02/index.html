@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">Let's Play Rock Paper Scissors!
+        <img src="./images/janken_boys.png" alt="Two boys playing rock paper scissors">
+    </div>
+    <div class="move-showcase">
+        <div class="move"><img src="./images/janken_gu.png" alt="A hand using rock.">Rock</div>
+        <div class="move"><img src="./images/janken_pa.png" alt="A hand using paper.">Paper</div>
+        <div class="move"><img src="./images/janken_choki.png" alt="A hand using scissors.">Scissors</div>
+    </div>
+    <p></p>
+    <div class="input">
+        Pick your move!
+        <p>Play:
+        <button type="button" id="userInput" onClick="playGame()">Let's go!</button>
+        </p>
+        </div>
+    <div class="output">
+        Show me a computer move:   
+        <p>
+        <button type="button" id="computerOutput" onClick="showComputerMove()">Show Me!</button>
+        </p>
+    </div>
+</body>
+<script src="myscripts.js"></script>
+</html>
