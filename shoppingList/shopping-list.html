@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item" placeholder="beans">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        const list = document.querySelector('ul');
+        const input = document.querySelector('input');
+        const button = document.querySelector('button');
+
+        button.addEventListener('click', function(e) {
+            console.log("Button was clicked.");
+            const newItem = document.getElementById('item').value; // or newItem = input.value
+            console.log(newItem);
+            input.value = ''; // Clear the input
+
+            const listItem = document.createElement('li'); // REMEMBER CREATE ELEMENT
+            const listText = document.createElement('span');
+            const listButton = document.createElement('button');
+
+            listItem.appendChild(listText);  // Appends the new item and button in unordered list
+            listText.textContent = newItem;
+            listItem.appendChild(listButton);
+            listButton.textContent = 'Delete Item';
+            list.appendChild(listItem);
+
+            listButton.addEventListener('click', () => {
+              list.removeChild(listItem);
+            })
+
+            return input.focus();  // Resets the input for accepting new inputs
+        });
+
+    </script>
+  </body>
+</html>
