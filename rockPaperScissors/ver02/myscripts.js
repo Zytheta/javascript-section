@@ -1,8 +1,12 @@
-// Returns a random integer from 0 to 10:
-// Math.floor(Math.random() * 11);
+// RPS Game Global Variables
 
 const wins = document.getElementById("wins");
 const losses = document.getElementById("losses");
+const remainingRounds = document.getElementById("remaining-rounds");
+const rockImage = document.getElementById("rock");
+const paperImage = document.getElementById("paper");
+const scissorsImage = document.getElementById("scissors");
+const moveSet = document.getElementsByClassName("move");
 let userInput = document.getElementById("userInput");
 let move;
 let moveLowerCase;
@@ -11,7 +15,8 @@ let playerMove;
 const rock = 0;
 const paper = 1;
 const scissors = 2;
-// let message;
+
+// End of Global Variables, Start of Functions
 
 function getRandom() {
     return Math.floor(Math.random() * 3); // Returns a number from 0-2
@@ -138,3 +143,7 @@ function getWinner() {
         alert("Can't determine a winner right now.");
     }
 }
+
+// End of Functions, Start of DOM Manipulation
+
+document.querySelector()
