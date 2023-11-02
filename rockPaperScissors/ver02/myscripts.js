@@ -1,6 +1,8 @@
 // Returns a random integer from 0 to 10:
 // Math.floor(Math.random() * 11);
 
+const wins = document.getElementById("wins");
+const losses = document.getElementById("losses");
 let userInput = document.getElementById("userInput");
 let move;
 let moveLowerCase;
@@ -9,7 +11,7 @@ let playerMove;
 const rock = 0;
 const paper = 1;
 const scissors = 2;
-let message;
+// let message;
 
 function getRandom() {
     return Math.floor(Math.random() * 3); // Returns a number from 0-2
