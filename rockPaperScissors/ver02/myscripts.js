@@ -1,10 +1,13 @@
 // RPS Game Global Variables
 
-const wins = document.getElementById("wins");
-document.getElementById("wins").textContent = "Wins: 0";
-const losses = document.getElementById("losses");
-document.getElementById("losses").textContent = "Losses: 0";
+let winCount = 0;
+let loseCount = 0;
 let roundCounter = 5;
+
+const wins = document.getElementById("wins");
+document.getElementById("wins").textContent = "Wins: " + winCount;
+const losses = document.getElementById("losses");
+document.getElementById("losses").textContent = "Losses: " + loseCount;
 const remainingRounds = document.getElementById("remaining-rounds");
 document.getElementById("remaining-rounds").textContent = "Rounds Remaining " + roundCounter;
 
@@ -12,10 +15,23 @@ const playerShowcase = document.getElementById("move-showcase");
 const computerShowcase = document.getElementById("computer-showcase");
 
 const rockImage = document.getElementById("rock");
+rockImage.src = "./images/janken_gu.png";
+rockImage.alt = "A hand using rock.";
 const paperImage = document.getElementById("paper");
+paperImage.src = "./images/janken_pa.png";
+paperImage.alt = "A hand using paper.";
 const scissorsImage = document.getElementById("scissors");
+scissorsImage.src = "./images/janken_choki.png";
+scissorsImage.alt = "A hand using scissors.";
 
-const moveSet = document.querySelectorAll('.move');
+const winnerImage = document.createElement("img");
+winnerImage.src = "./images/pose_win_girl.png";
+winnerImage.alt = "A girl celebrating her win.";
+const loserImage = document.createElement("img");
+loserImage.src = "./images/pose_lose_boy.png";
+loserImage.alt = "A boy lamenting his loss.";
+const outcomePicture = document.getElementById("outcome-picture");
+const computerMoveImg = document.getComputerMove("computer-move-img");
 
 let userInput = document.getElementById("userInput");
 let move;
@@ -37,22 +53,15 @@ function getComputerMove() { // Switch case for selecting move with getRandom()
     switch (getRandom()) {
         case 0:
             return computerMove = rock;
-            console.log(computerMove);
-            alert("The computer played 'rock!'");
             break;
         case 1:
             return computerMove = paper;
-            console.log(computerMove);
-            alert("The computer played 'paper!'");
             break;
         case 2:
             return computerMove = scissors;
-            alert("The computer played 'scissors!'");
-            console.log(computerMove);
         break
         default:
             alert("The opponent broke!")
-            console.log("Let's try again!")
     }
     return computerMove
 }
@@ -74,49 +83,7 @@ function showComputerMove() { // *Outdated* Used to test getComputerMove
 
 
 function playGame() { // Basic game loop
-    console.log("Button was clicked");
-    let move = prompt("What move will you play?");
-    console.log(move);
-    let moveLowerCase = move.toLowerCase();
-    console.log(moveLowerCase);
-    switch (moveLowerCase) {
-        case 'rock':
-            playerMove = rock;
-            console.log(playerMove);
-            break;
-        case 'paper':
-            playerMove = paper;
-            console.log(playerMove);
-            break;
-        case 'scissors':
-            playerMove = scissors;
-            console.log(playerMove);
-        break;
-        default:
-            return alert("Let's try again!");
-            console.log("Let's try again!");
-        break;
-    }
     getComputerMove();
-    console.log(getComputerMove());
-    console.log(computerMove);
-    switch (computerMove) {
-        case 0:
-            message = 'rock';
-            console.log(message);
-            break;
-        case 1:
-            message = 'paper';
-            console.log(message);
-            break;
-        case 2:
-            message = 'scissors';
-            console.log(message);
-            break;
-        default:
-            alert("Can't return computer move.");
-    }
-    alert("The computer played " + message + "!");
     return getWinner();
 }
 
@@ -159,12 +126,18 @@ function getWinner() { // Long if, else chain to determine winner
 
 rockImage.addEventListener("click", function(e) {
     console.log("Rock was clicked.");
+    playerMove = 0;
+    playGame();
 });
 
 paperImage.addEventListener("click", function(e) {
     console.log("Paper was clicked.");
+    playerMove = 1;
+    playGame();
 });
 
 scissorsImage.addEventListener("click", function(e) {
     console.log("Scissors was clicked.");
+    playerMove = 2;
+    playGame();
 });
