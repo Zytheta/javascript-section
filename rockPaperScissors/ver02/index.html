@@ -8,30 +8,42 @@
 </head>
 <body>
     <div class="header">Let's Play Rock Paper Scissors!
-        <img src="./images/janken_boys.png" alt="Two boys playing rock paper scissors" id="header-image">
+        <img src="./images/janken_boys.png" 
+        alt="Two boys playing rock paper scissors" id="header-image">
     </div>
-    <br>
-    <h2>Pick your move!</h2>
-    <div class="move-showcase">
-        <div class="move"><img src="./images/janken_gu.png" alt="A hand using rock." id="rock">Rock</div>
-        <div class="move"><img src="./images/janken_pa.png" alt="A hand using paper." id="paper">Paper</div>
-        <div class="move"><img src="./images/janken_choki.png" alt="A hand using scissors." id="scissors">Scissors</div>
-    </div>
-    <p></p>
-    <!--<div class="input">
-        Pick your move!
-        <p>Play:
-        <button type="button" id="userInput" onClick="playGame()">Let's go!</button>
-        </p>
+    <h2>Let's Play!</h2>
+    <div id="game-container">
+        <div class="move-showcase" id="move-showcase">My move:
+            <div class="move" id="rock"><img src="./images/janken_gu.png" 
+                alt="A hand using rock."><div>Rock</div></div>
+            <div class="move" id="paper"><img src="./images/janken_pa.png" 
+                alt="A hand using paper."><div>Paper</div></div>
+            <div class="move" id="scissors"><img src="./images/janken_choki.png" 
+                alt="A hand using scissors."><div>Scissors</div></div>
         </div>
-    <div class="output">
-        Show me a computer move:   
-        <p>
-        <button type="button" id="computerOutput" onClick="showComputerMove()">Show Me!</button>
-        </p>-->
+        <div class="outcome-showcase" id="outcome-showcase">Results:
+            <div id="outcome-picture"></div>
+            <div id="outcome-text">test</div>
+        </div>
+        <div class="computer-showcase" id="computer-showcase">Computer Move:
+            <div id="computer-move-img"></div>
+        </div>
     </div>
-    <div id="remaining-rounds">Remaining Rounds: 5</div>
-    <hr><div class="scoreboard"><p id="wins">Wins: 0</p><p id="losses">Losses: 0</p></div>
+        <!--<div class="input">
+            Pick your move!
+            <p>Play:
+            <button type="button" id="userInput" onClick="playGame()">Let's go!</button>
+            </p>
+        </div>
+        <div class="output">
+            Show me a computer move:   
+            <p>
+            <button type="button" id="computerOutput" onClick="showComputerMove()">
+                Show Me!</button>
+            </p>
+        </div>-->
+    <div id="remaining-rounds"></div>
+    <div class="scoreboard"><p id="wins"></p><p id="losses"></p></div>
 </body>
 <script src="myscripts.js"></script>
 </html>

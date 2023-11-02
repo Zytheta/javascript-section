@@ -1,28 +1,39 @@
 // RPS Game Global Variables
 
 const wins = document.getElementById("wins");
+document.getElementById("wins").textContent = "Wins: 0";
 const losses = document.getElementById("losses");
+document.getElementById("losses").textContent = "Losses: 0";
+let roundCounter = 5;
 const remainingRounds = document.getElementById("remaining-rounds");
+document.getElementById("remaining-rounds").textContent = "Rounds Remaining " + roundCounter;
+
+const playerShowcase = document.getElementById("move-showcase");
+const computerShowcase = document.getElementById("computer-showcase");
+
 const rockImage = document.getElementById("rock");
 const paperImage = document.getElementById("paper");
 const scissorsImage = document.getElementById("scissors");
-const moveSet = document.getElementsByClassName("move");
+
+const moveSet = document.querySelectorAll('.move');
+
 let userInput = document.getElementById("userInput");
 let move;
 let moveLowerCase;
 let computerMove;
 let playerMove;
+
 const rock = 0;
 const paper = 1;
 const scissors = 2;
 
 // End of Global Variables, Start of Functions
 
-function getRandom() {
-    return Math.floor(Math.random() * 3); // Returns a number from 0-2
+function getRandom() { // Picks a number between 0-2 for getComputerMove()
+    return Math.floor(Math.random() * 3);
 }
 
-function getComputerMove() {
+function getComputerMove() { // Switch case for selecting move with getRandom()
     switch (getRandom()) {
         case 0:
             return computerMove = rock;
@@ -46,7 +57,7 @@ function getComputerMove() {
     return computerMove
 }
 
-function showComputerMove() {
+function showComputerMove() { // *Outdated* Used to test getComputerMove
     console.log("Show computer move button was clicked.");
     getComputerMove();
     console.log(computerMove)
@@ -62,7 +73,7 @@ function showComputerMove() {
 }
 
 
-function playGame() {
+function playGame() { // Basic game loop
     console.log("Button was clicked");
     let move = prompt("What move will you play?");
     console.log(move);
@@ -109,7 +120,7 @@ function playGame() {
     return getWinner();
 }
 
-function getWinner() {
+function getWinner() { // Long if, else chain to determine winner
     console.log((playerMove), (computerMove));
     if (playerMove === 0 && computerMove === 0) {
         console.log("It's a tie.");
@@ -144,6 +155,16 @@ function getWinner() {
     }
 }
 
-// End of Functions, Start of DOM Manipulation
+// End of Functions, Start of DOM Manipulation for the moveSet
 
-document.querySelector()
+rockImage.addEventListener("click", function(e) {
+    console.log("Rock was clicked.");
+});
+
+paperImage.addEventListener("click", function(e) {
+    console.log("Paper was clicked.");
+});
+
+scissorsImage.addEventListener("click", function(e) {
+    console.log("Scissors was clicked.");
+});
