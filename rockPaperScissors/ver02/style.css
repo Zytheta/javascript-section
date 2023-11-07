@@ -7,7 +7,7 @@
 }
 
 .header {
-    font-size: 48px;
+    font-size: 36px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -23,6 +23,15 @@ img {
     width: auto;
     height: 100px;
     padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#computer-move-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .header img {
@@ -34,11 +43,17 @@ img {
 .move-showcase, .outcome-showcase, .computer-showcase {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-content: stretch;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
     gap: 15px;
     text-align: center;
+}
+
+#computer-move-img {
+    display: flex;
+    align-self: center;
+    justify-content: center;
 }
 
 .move:hover {
