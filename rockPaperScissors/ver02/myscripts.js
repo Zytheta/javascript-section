@@ -50,7 +50,14 @@ winnerImage.alt = "A girl celebrating her win.";
 const loserImage = document.createElement("img");
 loserImage.src = "./images/pose_lose_boy.png";
 loserImage.alt = "A boy lamenting his loss.";
-const outcomePicture = document.getElementById("outcome-picture");
+const drawImage = document.createElement("img");
+drawImage.src = "./images/draw.jpeg";
+drawImage.alt = "A fun picture of the word draw."
+let outcomePicture = document.getElementById("outcome-picture");
+
+let outcomeText = document.getElementById("outcome-text");
+outcomeText.textContent = '';
+
 let computerMoveImg = document.getElementById("computer-move-img");
 
 let userInput = document.getElementById("userInput");
@@ -114,18 +121,59 @@ function clearComputerMove() { // Clears the move picture for subsequent rounds
     } 
 }
 
-function clearResults() {
-    if (outcome)
+function updateOutcome(text) { // Updates the middle outcome area with text and picture
+    console.log(winner);
+    if (outcomePicture.childNodes.length > 0) {
+        outcomePicture.lastChild.remove();
+    }
+    if (winner === 'tie') {
+        outcomePicture.appendChild(drawImage);
+        return document.getElementById("outcome-text").textContent = 'You tied.';
+    } else if (winner === 'computer') {
+        outcomePicture.appendChild(loserImage);
+        return document.getElementById("outcome-text").textContent = 'You lose.';
+    } else (winner === 'player') 
+        outcomePicture.appendChild(winnerImage);
+        return document.getElementById("outcome-text").textContent = 'You win.';
+    
+}
+
+function roundChecker() { // Checks if the game is over
+    console.log(`This is round ${roundCounter + 1}.`)
+    if (roundCounter === 0) {
+    setTimeout(() => {
+        
+    }, 500);
+        alert("Good game! Reset?");
+    setTimeout(() => {
+        
+    }, 500);
+    resetCounters();
+    } 
+} 
+
+function resetCounters() { // Resets the counters when the game "finishes"
+    winCount = 0;
+    wins.textContent = "Wins: " + winCount;
+    loseCount = 0;
+    document.getElementById("losses").textContent = "Losses: " + loseCount;
+    tiesCount = 0;
+    ties.textContent = "Ties: " + tiesCount;
+    roundCounter = 5;
+    remainingRounds.textContent = "Rounds Remaining " + roundCounter;
 }
 
 function playGame() { // Basic game loop
+    roundChecker();
     clearComputerMove();
     getComputerMove();
-    return getWinner();
+    getWinner();
+    updateOutcome();
 }
 
 function getWinner() { // Long if, else chain to determine winner
     console.log((playerMove), (computerMove));
+    winner = '';
     if (playerMove === 0 && computerMove === 0) {
         console.log("It's a tie.");
         tiesCount++;
@@ -133,8 +181,7 @@ function getWinner() { // Long if, else chain to determine winner
         roundCounter = roundCounter - 1;
         document.getElementById("remaining-rounds").textContent = 
         "Rounds Remaining " + (roundCounter);
-        winner = tie;
-        alert('Tie, you both played rock.');
+        winner = 'tie';
     } else if (playerMove === 0 && computerMove === 1) {
         console.log('Player loses.');
         loseCount++;
@@ -142,8 +189,7 @@ function getWinner() { // Long if, else chain to determine winner
         roundCounter = roundCounter - 1;
         document.getElementById("remaining-rounds").textContent = 
         "Rounds Remaining " + (roundCounter);
-        winner = computer;
-        alert('You lose, paper beats rock.');
+        winner = 'computer';
     } else if (playerMove === 0 && computerMove === 2) {
         console.log('Player wins.');
         winCount++;
@@ -151,8 +197,7 @@ function getWinner() { // Long if, else chain to determine winner
         roundCounter = roundCounter - 1;
         document.getElementById("remaining-rounds").textContent = 
         "Rounds Remaining " + (roundCounter);
-        winner = player;
-        alert('You win, rock beats scissors.');
+        winner = 'player';
     } else if (playerMove === 1 && computerMove === 0) {
         console.log('Player wins.');
         winCount++;
@@ -160,8 +205,7 @@ function getWinner() { // Long if, else chain to determine winner
         roundCounter = roundCounter - 1;
         document.getElementById("remaining-rounds").textContent = 
         "Rounds Remaining " + (roundCounter);
-        winner = player;
-        alert('You win, paper beats rock.');
+        winner = 'player';
     } else if (playerMove === 1 && computerMove === 1) {
         console.log("It's a tie.");
         tiesCount++;
@@ -169,8 +213,7 @@ function getWinner() { // Long if, else chain to determine winner
         roundCounter = roundCounter - 1;
         document.getElementById("remaining-rounds").textContent = 
         "Rounds Remaining " + (roundCounter);
-        winner = tie;
-        alert('Tie, you both played paper.');
+        winner = 'tie';
     } else if (playerMove === 1 && computerMove === 2) {
         console.log('Player loses.');
         loseCount++;
@@ -178,8 +221,7 @@ function getWinner() { // Long if, else chain to determine winner
         roundCounter = roundCounter - 1;
         document.getElementById("remaining-rounds").textContent = 
         "Rounds Remaining " + (roundCounter);
-        winner = computer;
-        alert('You lose, scissors beats paper.');
+        winner = 'computer';
     } else if (playerMove === 2 && computerMove === 0) {
         console.log('Player loses.');
         loseCount++;
@@ -187,8 +229,7 @@ function getWinner() { // Long if, else chain to determine winner
         roundCounter = roundCounter - 1;
         document.getElementById("remaining-rounds").textContent = 
         "Rounds Remaining " + (roundCounter);
-        winner = computer;
-        alert('You lose, rock beats scissors.');
+        winner = 'computer';
     } else if (playerMove === 2 && computerMove === 1) {
         console.log("Player wins.");
         winCount++;
@@ -196,8 +237,7 @@ function getWinner() { // Long if, else chain to determine winner
         roundCounter = roundCounter - 1;
         document.getElementById("remaining-rounds").textContent = 
         "Rounds Remaining " + (roundCounter);
-        winner = player;
-        alert('You win, scissors beats paper.');
+        winner = 'player';
     } else if (playerMove === 2 && computerMove === 2) {
         console.log("It's a tie.");
         tiesCount++;
@@ -205,8 +245,7 @@ function getWinner() { // Long if, else chain to determine winner
         roundCounter = roundCounter - 1;
         document.getElementById("remaining-rounds").textContent = 
         "Rounds Remaining " + (roundCounter);
-        winner = tie;
-        alert('Tie, you both play scissors.');
+        winner = 'tie';
     } else {
         console.log("Error, can't determine a winner.");
         alert("Can't determine a winner right now.");

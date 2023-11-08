@@ -27,6 +27,11 @@ img {
     align-items: center;
 }
 
+.outcome-showcase #outcome-picture img {
+    width: 200px;
+    height: auto;
+}
+
 #computer-move-img {
     display: flex;
     justify-content: center;
@@ -79,7 +84,7 @@ img {
 #outcome-text {
     display: flex;
     justify-content: center;
-    align-self: flex-end;
+    align-self: center;
     text-align: center;
 }
 
