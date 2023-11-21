@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/calculator16.png" type="calculator-16x16.png" sizes="16x16">
+    <link rel="icon" href="./images/calculator32.png" type="calculator-32x32.png" sizes="32x32">
+    <link rel="icon" href="./images/calculator96.png" type="calculator-96x96.png" sizes="96x96">
+    <link rel="icon" href="./images/calculator120.png" type="calculator-120x120.png" sizes="120x120">
+</head>
+<body>
+    <div class="header"><h1>Chris's Calculator</h1></div>
+<div class="shell">    
+    <div id="display-text">
+        <input type="text" value='0' oninput="checkNumber(this)" id="input1" class="output-box">
+        <div id="input2" class="output-box"></div>
+        <div id="input3" class="output-box"></div>
+    </div>
+    <div class="button-box">
+        <div class="number-box">
+            <div class="first-row"><button onclick="addValue('7')" id="7" class="number">7</button>
+                <button onclick="addValue('8')" id="8" class="number">8</button>
+                <button onclick="addValue('9')" id="9" class="number">9</button></div>
+            <div class="second-row"><button onclick="addValue('4')" id="4" class="number">4</button>
+                <button onclick="addValue('5')" id="5" class="number">5</button>
+                <button onclick="addValue('6')" id="6" class="number">6</button></div>
+            <div class="third-row"><button onclick="addValue('1')" id="1" class="number">1</button>
+                <button onclick="addValue('2')" id="2" class="number">2</button>
+                <button onclick="addValue('3')" id="3" class="number">3</button></div>
+            <div class="fourth-row"><button onclick="addValue('.')" id="." class="number">.</button>
+                <button onclick="addValue('0')" id="0" class="number">0</button>
+                <button id="equals" class="number">=</button></div>
+        </div>
+        <div class="operation-box">
+            <div class="operations">
+                <button id="all-clear" class="operator">AC</button>
+                <button id="divide" class="operator">&divide;</button>
+                <button id="multiply" class="operator">*</button>
+                <button id="subtract" class="operator">-</button>
+                <button id="sum" class="operator">+</button>
+            </div>
+        </div>
+    </div>
+</div>    
+    <div class="footer"><a target="_blank" href="https://icons8.com/icon/w8uA2lyOFNbd/calculator">Calculator</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        <p>Thanks to the Odin Project.</p>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
