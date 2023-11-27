@@ -45,7 +45,7 @@ h1 {
     border-color: black;
 }
 
-.output-box {
+.output-box, .wrapper {
     color: black;
     text-align: left;
     background-color: white;
@@ -60,8 +60,23 @@ h1 {
 }
 
 #input1, #input2, #input3 {
+    display: flex;
+    flex: 1;
     font-size: 36px;
     text-align: left;
+}
+
+#input2, #input3 {
+    flex-basis: 65%;
+}
+
+.operator-box {
+    display: flex;
+    text-align: center;
+    font-size: 36px;
+    flex: 1;
+    background-color: white;
+    color: black;
 }
 
 .button-box {

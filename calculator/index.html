@@ -15,8 +15,14 @@
 <div class="shell">    
     <div id="display-text">
         <input type="text" value='0' oninput="checkNumber(this)" id="input1" class="output-box">
-        <div id="input2" class="output-box"></div>
-        <div id="input3" class="output-box"></div>
+        <div class="wrapper">
+            <div id="operator-box1" class="operator-box"></div>
+            <div id="input2" class="output-box"></div>
+        </div>
+        <div class="wrapper">
+            <div id="operator-box2" class="operator-box"></div>
+            <div id="input3" class="output-box"></div>
+        </div>
     </div>
     <div class="button-box">
         <div class="number-box">
@@ -40,6 +46,7 @@
                 <button id="multiply" class="operator">*</button>
                 <button id="subtract" class="operator">-</button>
                 <button id="sum" class="operator">+</button>
+                <button id="neg" class="operator">NEG</button>
             </div>
         </div>
     </div>
