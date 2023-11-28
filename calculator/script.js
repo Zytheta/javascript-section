@@ -270,7 +270,7 @@ function sumEvent(event) {
     if (event.type === 'click' || (event.type === 'keydown' && event.key === '+')) {
         if (operatorBox1.textContent === "=") {
             operatorBox1.textContent = '+';
-            equalsEvent(event);
+            return equalsEvent(event);
         } else if (operatorBox1.textContent === "") {
             operatorBox1.textContent = "+";
             input2.textContent = parseFloat(input1.value);
