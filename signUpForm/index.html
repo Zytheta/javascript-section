@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris's Sign-Up Sheet</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./scripts.js" defer></script>
+</head>
+<body>
+    <div class="container" id="big-container">
+        <div class="sidebar" id="sidebar">
+            <img src="./images/ivan-diaz-YOy-ek-aBR0-unsplash.jpg" 
+            alt="A space shuttle taking off." id="backdrop">
+            <img src="./images/symbol_earth.webp" alt="NASA's symbol for Earth." id="splash-image">
+            <div id="credit"><a href="https://unsplash.com/photos/white-and-black-plane-flying-in-the-sky-during-daytime-YOy-ek-aBR0">Photo</a> 
+                &nbsp;by&nbsp; 
+                <a href="https://unsplash.com/@ivvndiaz">Ivan Diaz</a> 
+                &nbsp;on&nbsp; 
+                <a href="https://unsplash.com/">Unsplash</a>.</div>
+        </div>
+        <div class="main-container" id="main-container">
+            <header>The Ultimate Form</header>
+            <main>
+                <div class="form-title">Please Enter Your Information Below:</div>
+                <form action="https://httpbin.org/" method="post">
+                    <div class="form-header">
+                        First Name:<input type="text" id="first-name" name="first-name" placeholder="Bob" class="form-item">
+                        Last Name:<input type="text" id="last-name" name="last-name" placeholder="Semple" class="form-item">
+                    </div>
+                    <div class="form-header">
+                        Email:<input type="email" id="email" name="email" placeholder="bobsemple@tank.com" class="form-item">
+                        Phone Number:<input type="text" id="phone-number" name="phone-number" placeholder="123-4567-8901" class="form-item">
+                    </div>
+                    <div class="form-header">
+                        Password:<input type="text" id="password" name="password" placeholder="6 characters and 1 number" class="form-item">
+                        Confirm Password:<input type="password" id="password-check" name="password-check" placeholder="same as password" class="form-item">
+                    </div>
+                </form>
+            </main>
+            <foot>Thank you for your cooperation!</foot>
+        </div>
+    </div>
+</body>
+</html>

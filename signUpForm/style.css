@@ -1,0 +1,96 @@
+@font-face {
+    font-family: Oswald;
+    src: url(./fonts/Oswald/static/Oswald-Regular.ttf);
+}
+
+@font-face {
+    font-family: Lora;
+    src: url(./fonts/Lora/static/Lora-Medium.ttf);
+}
+
+:root {
+    background-color: black;
+    color: white;
+    font-family: Oswald, Lora, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    --form-header-size: 1.5rem;
+    --form-header-family: 'Oswald', sans-serif;
+    --form-item-size: 0.75rem;
+    --form-item-family: 'Lora', serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.big-container {
+    display: flex;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 0 auto;
+}
+
+header {
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.form-title {
+    font-size: var(--form-header-size);
+    font-family: var(--form-header-family);
+}
+
+.form-header {
+    font-family: var(--form-item-family);
+}
+
+.form-item {
+    font-size: var(--form-item-size);
+    font-family: var(--form-item-family);
+}
+
+.sidebar, .sidebar img {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 0px;
+    min-width: 20vw;
+    max-width: 45vw;
+    max-height: 100vw;
+}
+
+#splash-image {
+    display: flex;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    width: 50%;
+    height: auto;
+}
+
+#credit {
+    display: flex;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    color: white;
+}
+
+#credit a {
+    color: white;
+    text-decoration: underline;
+}
+
+#big-container {
+    display: flex;
+}
