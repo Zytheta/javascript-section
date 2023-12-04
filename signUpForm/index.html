@@ -14,9 +14,9 @@
             alt="A space shuttle taking off." id="backdrop">
             <img src="./images/symbol_earth.webp" alt="NASA's symbol for Earth." id="splash-image">
             <div id="credit"><a href="https://unsplash.com/photos/white-and-black-plane-flying-in-the-sky-during-daytime-YOy-ek-aBR0">Photo</a> 
-                &nbsp;by&nbsp; 
+                by 
                 <a href="https://unsplash.com/@ivvndiaz">Ivan Diaz</a> 
-                &nbsp;on&nbsp; 
+                on 
                 <a href="https://unsplash.com/">Unsplash</a>.</div>
         </div>
         <div class="main-container" id="main-container">
@@ -25,20 +25,28 @@
                 <div class="form-title">Please Enter Your Information Below:</div>
                 <form action="https://httpbin.org/" method="post">
                     <div class="form-header">
-                        First Name:<input type="text" id="first-name" name="first-name" placeholder="Bob" class="form-item">
-                        Last Name:<input type="text" id="last-name" name="last-name" placeholder="Semple" class="form-item">
+                        <div class="item"><label for="first-name">*First Name:&nbsp;</label><input type="text" id="first-name" name="first-name" placeholder="Bob" minlength="1" class="form-item" autocomplete="on"></div>
+                        <div class="item"><label for="middle-name">Middle Name:&nbsp;</label><input type="text" id="middle-name" name="middle-name" placeholder="Semple" class="form-item" autocomplete="on"></div>
+                        <div class="item"><label for="last-name">*Last Name:&nbsp;</label><input type="text" id="last-name" name="last-name" placeholder="Tank" minlength="1" class="form-item" autocomplete="on"></div>
                     </div>
                     <div class="form-header">
-                        Email:<input type="email" id="email" name="email" placeholder="bobsemple@tank.com" class="form-item">
-                        Phone Number:<input type="text" id="phone-number" name="phone-number" placeholder="123-4567-8901" class="form-item">
+                        <div class="item"><label for="email">*Email:&nbsp;</label><input type="email" id="email" name="email" placeholder="bobsemple@tank.com" class="form-item" minlength="7" autocomplete="on"></div>
+                        <div class="item"><label for="phone-number">*Phone Number:&nbsp;</label><input type="text" id="phone-number" name="phone-number" placeholder="123-4567-8901" class="form-item" minlength="9" pattern="[0-9]{10,11}" autocomplete="on"></div>
                     </div>
                     <div class="form-header">
-                        Password:<input type="text" id="password" name="password" placeholder="6 characters and 1 number" class="form-item">
-                        Confirm Password:<input type="password" id="password-check" name="password-check" placeholder="same as password" class="form-item">
+                        <div class="item"><label for="password">*Password:&nbsp;</label><input type="password" id="password" name="password" placeholder="6 characters and 1 number" minlength="7" class="form-item"></div>
+                        <div class="item"><label for="password-check">*Confirm Password:&nbsp;</label><input type="password" id="password-check" name="password-check" placeholder="Same as password" minlength="7" class="form-item"></div>
+                    </div>
+                    <div class="form-header">
+                        <button type="reset" id="reset">Reset</button>
+                        <button type="submit" id="submit">Create Account</button>
+                    </div>
+                    <div class="form-header">
+                        <div id="password-sign">Passwords require at least 1 number and a total of 7 or more characters.</div>
                     </div>
                 </form>
             </main>
-            <foot>Thank you for your cooperation!</foot>
+            <footer>Thank you for your cooperation!</footer>
         </div>
     </div>
 </body>
